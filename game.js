@@ -11,11 +11,14 @@ gamePattern.push(randomChosenColour);
 
 $("#" + randomChosenColour).fadeOut(50).fadeIn(50);
 
-var randomChosenColourSoundPath = "sounds/" + randomChosenColour + ".mp3";
+document.querySelector("#" + randomChosenColour).addEventListener("click", function(){
+    var randomChosenColourSoundPath = "sounds/" + randomChosenColour + ".mp3";
 
-var randomChosenColourSound = new Audio(randomChosenColourSoundPath);
+    var randomChosenColourSound = new Audio(randomChosenColourSoundPath);
 
-randomChosenColourSound.play();
+    randomChosenColourSound.play();
+})
+
 
 function newSequence(){
     var randomNumber = Math.random() * 4;

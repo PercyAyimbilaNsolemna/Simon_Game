@@ -11,13 +11,18 @@ gamePattern.push(randomChosenColour);
 
 $("#" + randomChosenColour).fadeOut(50).fadeIn(50);
 
-document.querySelector("#" + randomChosenColour).addEventListener("click", function(){
-    var randomChosenColourSoundPath = "sounds/" + randomChosenColour + ".mp3";
+var randomChosenColourSoundPath = "sounds/" + randomChosenColour + ".mp3";
 
-    var randomChosenColourSound = new Audio(randomChosenColourSoundPath);
+var randomChosenColourSound = new Audio(randomChosenColourSoundPath);
 
-    randomChosenColourSound.play();
+randomChosenColourSound.play();
+
+$(".btn").on("click", function(){
+    var userChosenColour = this.getAttribute("id");
+
+    console.log(userChosenColour);
 })
+
 
 
 function newSequence(){

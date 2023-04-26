@@ -1,5 +1,5 @@
 
-// var buttonColours = ["red", "blue", "green", "yellow"];
+var buttonColours = ["red", "blue", "green", "yellow"];
 
 // var randomNumber = newSequence();
 

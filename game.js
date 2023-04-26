@@ -1,4 +1,6 @@
 
+var userClickedPattern = [];
+
 var gamePattern = [];
 
 var buttonColours = ["red", "blue", "green", "yellow"];

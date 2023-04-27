@@ -12,6 +12,8 @@ $(".btn").on("click", function(){
 
     userClickedPattern.push(userChosenColour);
 
+    animatePress(userChosenColour);
+
     playSound(userChosenColour);
 
 })
@@ -42,4 +44,14 @@ function playSound(name){
     var colourSound = new Audio(colourSoundPath);
 
     colourSound.play();
+}
+
+//Animate press 
+
+function animatePress(currentColor){
+    $("#" + currentColor).addClass("pressed");
+
+    setTimeout(function() {
+        $("#" + currentColor).removeClass("pressed");
+    }, 100);
 }

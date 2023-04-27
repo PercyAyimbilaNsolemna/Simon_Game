@@ -38,3 +38,14 @@ function newSequence(){
 
     randomChosenColourSound.play();
 }
+
+//Play sound function 
+
+function playSound(name){
+
+    var colourSoundPath = "sounds/" + name + ".mp3";
+
+    var colourSound = new Audio(colourSoundPath);
+
+    colourSound.play();
+}

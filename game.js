@@ -55,3 +55,9 @@ function animatePress(currentColor){
         $("#" + currentColor).removeClass("pressed");
     }, 100);
 }
+
+//Checking key press to start the game 
+
+$(document).on("keydown", function(){
+    newSequence();
+})

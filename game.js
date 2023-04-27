@@ -5,6 +5,8 @@ var gamePattern = [];
 
 var buttonColours = ["red", "blue", "green", "yellow"];
 
+var level = 0;
+
 
 $(".btn").on("click", function(){
 
@@ -21,6 +23,9 @@ $(".btn").on("click", function(){
 
 
 function newSequence(){
+
+    level++;
+    
     var randomNumber = Math.random() * 4;
 
     randomNumber = Math.floor(randomNumber);
@@ -59,5 +64,8 @@ function animatePress(currentColor){
 //Checking key press to start the game 
 
 $(document).on("keydown", function(){
+
+    $("h1").html("Level 0");
+
     newSequence();
 })

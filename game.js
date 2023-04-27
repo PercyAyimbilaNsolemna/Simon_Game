@@ -20,9 +20,12 @@ var randomChosenColourSound = new Audio(randomChosenColourSoundPath);
 randomChosenColourSound.play();
 
 $(".btn").on("click", function(){
+
     var userChosenColour = this.getAttribute("id");
 
-    console.log(userChosenColour);
+    userClickedPattern.push(userChosenColour);
+
+    console.log(userClickedPattern);
 })
 
 

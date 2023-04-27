@@ -12,11 +12,8 @@ $(".btn").on("click", function(){
 
     userClickedPattern.push(userChosenColour);
 
-    var userChosenColourPath = "sounds/" + userChosenColour + ".mp3";
+    playSound(userChosenColour);
 
-    var userChosenColourSound = new Audio(userChosenColourPath);
-
-    userChosenColourSound.play();
 })
 
 
@@ -32,11 +29,8 @@ function newSequence(){
 
     $("#" + randomChosenColour).fadeOut(100).fadeIn(100);
 
-    var randomChosenColourSoundPath = "sounds/" + randomChosenColour + ".mp3";
+    playSound(randomChosenColour)
 
-    var randomChosenColourSound = new Audio(randomChosenColourSoundPath);
-
-    randomChosenColourSound.play();
 }
 
 //Play sound function 

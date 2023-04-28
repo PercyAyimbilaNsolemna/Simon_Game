@@ -107,6 +107,26 @@ function checkAnswer(currentLevel){
             $("body").removeClass("game-over");
         }, 200);
 
-        $("h1").html("Game Over, Press Any Key to Restart")
+        $("h1").html("Game Over, Press Any Key to Restart");
+
+        startOver();
+    }
+}
+
+function startOver(){
+    level = 0;
+
+    var gamePatternLength = (gamePattern.length) - 1;
+
+    while (gamePatternLength >= 0){
+        gamePattern.pop(gamePatternLength);
+        gamePatternLength--;
+    }
+
+    var userClickedPatternLength = userClickedPattern.length - 1;
+
+    while (userClickedPatternLength >= 0){
+        userClickedPattern.pop(userClickedPatternLength);
+        userClickedPatternLength--;
     }
 }

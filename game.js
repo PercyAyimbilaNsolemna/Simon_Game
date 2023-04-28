@@ -73,12 +73,16 @@ function animatePress(currentColor){
 
 //Checking key press to start the game 
 
-$(document).on("keydown", function(){
+    $(document).on("keydown", function(){
 
-    $("h1").html("Level 0");
+        if (level === 0) {
 
-    newSequence();
-})
+        $("h1").html("Level 0");
+
+        newSequence();
+
+        }
+    })
 
 //Checks the user's chosen answer compared to the game pattern
 

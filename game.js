@@ -18,11 +18,13 @@ $(".btn").on("click", function(){
 
     playSound(userChosenColour);
 
+    var indexOfLastAnswer = (userClickedPattern.length) - 1;
+
     console.log(gamePattern);
 
     console.log(userClickedPattern);
 
-    checkAnswer();
+    checkAnswer(indexOfLastAnswer);
 
 })
 
@@ -80,15 +82,31 @@ $(document).on("keydown", function(){
 
 //Checks the user's chosen answer compared to the game pattern
 
-function checkAnswer(){
-    for(var i = 0; i < gamePattern.length; i++){
-        for(var x = 0; x < userClickedPattern.length; x++){
-            if(gamePattern[i] === userClickedPattern[i]){
-                console.log("Correct pattern");
+function checkAnswer(currentLevel){
+    if (gamePattern[currentLevel] === userClickedPattern[currentLevel]){
+        console.log("Success");
+
+        if (gamePattern.length === userClickedPattern.length){
+            while(currentLevel >= 0){
+                userClickedPattern.pop(currentLevel);
+                currentLevel--;
             }
-            else {
-                console.log("Wrong Pattern");
-            }
+            setTimeout(function()  {
+                newSequence();
+            }, 1000);
         }
+    }
+    else {
+        console.log("Wrong");
+
+        playSound("wrong");
+
+        $("body").addClass("game-over");
+
+        setTimeout(function() {
+            $("body").removeClass("game-over");
+        }, 200);
+
+        $("h1").html("Game Over, Press Any Key to Restart")
     }
 }

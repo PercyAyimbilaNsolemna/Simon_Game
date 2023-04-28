@@ -18,6 +18,12 @@ $(".btn").on("click", function(){
 
     playSound(userChosenColour);
 
+    console.log(gamePattern);
+
+    console.log(userClickedPattern);
+
+    checkAnswer();
+
 })
 
 
@@ -25,7 +31,9 @@ $(".btn").on("click", function(){
 function newSequence(){
 
     level++;
-    
+
+    $("h1").html("Level " + level);
+
     var randomNumber = Math.random() * 4;
 
     randomNumber = Math.floor(randomNumber);
@@ -69,3 +77,18 @@ $(document).on("keydown", function(){
 
     newSequence();
 })
+
+//Checks the user's chosen answer compared to the game pattern
+
+function checkAnswer(){
+    for(var i = 0; i < gamePattern.length; i++){
+        for(var x = 0; x < userClickedPattern.length; x++){
+            if(gamePattern[i] === userClickedPattern[i]){
+                console.log("Correct pattern");
+            }
+            else {
+                console.log("Wrong Pattern");
+            }
+        }
+    }
+}
